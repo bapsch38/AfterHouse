@@ -1,0 +1,12 @@
+{
+  "name": "AFTERHOURS",
+  "short_name": "AFTERHOURS",
+  "description": "Un espace adulte pour des rencontres à votre rythme.",
+  "lang": "fr-FR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#120d12",
+  "theme_color": "#120d12",
+  "icons": []
+}
