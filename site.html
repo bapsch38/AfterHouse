@@ -2,61 +2,60 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#180d17"><meta name="description" content="AFTERHOURS — fil de la communauté et rencontres adultes.">
-<link rel="stylesheet" href="./styles.css"><title>AFTERHOURS — Fil de la communauté</title>
+<meta name="theme-color" content="#180d17"><meta name="description" content="AFTERHOURS — le fil de la communauté adulte.">
+<link rel="stylesheet" href="./styles.css"><title>AFTERHOURS — Fil</title>
+<style>
+.feed-layout{grid-template-columns:210px minmax(0,720px);max-width:1120px;gap:28px}
+.feed-rightbar{display:none}.feed-sidebar{top:92px}.sidebar-card{padding:16px}
+.feed-nav a{cursor:pointer}.feed-nav a.selected{background:#f3a9c71a;color:var(--text);border:1px solid #f3a9c733}
+.tab-panel{display:none}.tab-panel.active{display:block}.tab-empty{padding:36px 25px;text-align:center;border:1px solid var(--line);border-radius:15px;background:linear-gradient(145deg,#281828,#1c111d)}
+.tab-empty .empty-icon{font-size:34px;color:var(--pink)}.tab-empty h2{font-size:22px;font-weight:500;margin:8px 0}.tab-empty p{max-width:430px;margin:0 auto 18px;font-size:12px;line-height:1.9;color:var(--muted)}
+.feed-welcome{padding-bottom:15px}.feed-visitor-notice{margin-bottom:13px}.feed-composer{margin-bottom:13px}.post-card{margin-bottom:13px}
+.feed-column{min-width:0}.feed-filters{margin-top:6px}
+@media(max-width:720px){.feed-layout{display:block}.feed-sidebar{margin-bottom:12px}.feed-nav{padding-bottom:7px}.feed-nav a{flex:0 0 auto}.sidebar-card{display:none}}
+</style>
 </head>
 <body class="site-page feed-page">
 <header class="topbar feed-topbar">
   <a class="brand" href="./index.html" aria-label="AFTERHOURS accueil"><span class="brand-mark">A</span><span>AFTER<span class="brand-accent">HOURS</span></span></a>
-  <form class="feed-search" role="search" onsubmit="return false"><span>⌕</span><input aria-label="Rechercher" placeholder="Rechercher des membres, des envies…"></form>
-  <div class="feed-top-actions"><span class="visitor-chip">MODE VISITEUR</span><a class="button button-small" href="./index.html#rejoindre">Connexion / Inscription ↗</a></div>
+  <form class="feed-search" role="search" onsubmit="return false"><span>⌕</span><input aria-label="Rechercher" placeholder="Rechercher dans AFTERHOURS…"></form>
+  <div class="feed-top-actions"><span class="visitor-chip">18+ · VISITEUR</span><a class="button button-small" href="./index.html#rejoindre">Se connecter ↗</a></div>
 </header>
 <main class="feed-layout">
   <aside class="feed-sidebar">
-    <div class="sidebar-card">
-      <div class="visitor-avatar">A<span>+</span></div><h3>Bienvenue sur AFTERHOURS</h3><p>Explorez la communauté à votre rythme.</p><a class="button sidebar-cta" href="./index.html#rejoindre">Créer un compte gratuit</a>
-    </div>
-    <nav class="feed-nav" aria-label="Navigation du site">
-      <a class="selected" href="#fil"><span>⌂</span> Fil d'actualité</a>
-      <a href="#rencontres"><span>♡</span> Rencontres</a>
-      <a href="#recherche"><span>⌕</span> Recherche</a>
-      <a href="#messages"><span>✉</span> Messages <i>Réservé</i></a>
-      <a href="#evenements"><span>✦</span> Événements</a>
-      <a href="#profil"><span>◎</span> Mon profil <i>Réservé</i></a>
+    <div class="sidebar-card"><div class="visitor-avatar">A<span>+</span></div><h3>Bienvenue sur AFTERHOURS</h3><p>Un espace de rencontres libre et respectueux.</p><a class="button sidebar-cta" href="./index.html#rejoindre">Créer un compte</a></div>
+    <nav class="feed-nav" aria-label="Navigation principale">
+      <a class="selected" href="#fil" data-tab="fil"><span>⌂</span> Fil d'actualité</a>
+      <a href="#rencontres" data-tab="rencontres"><span>♡</span> Rencontres</a>
+      <a href="#recherche" data-tab="recherche"><span>⌕</span> Recherche</a>
+      <a href="#messages" data-tab="messages"><span>✉</span> Messages</a>
+      <a href="#evenements" data-tab="evenements"><span>✦</span> Événements</a>
+      <a href="#profil" data-tab="profil"><span>◎</span> Mon profil</a>
     </nav>
     <div class="sidebar-foot"><a href="./index.html#securite">Respect & sécurité</a><span>AFTERHOURS · 18+</span></div>
   </aside>
-  <section class="feed-column" id="fil">
-    <div class="feed-welcome">
-      <div><p class="eyebrow">LA COMMUNAUTÉ AFTERHOURS</p><h1>Le fil d'actualité</h1><p>Les moments, les envies et les rencontres de la communauté.</p></div>
-      <span class="site-tag">Aperçu</span>
+  <section class="feed-column">
+    <div class="tab-panel active" id="panel-fil" data-panel="fil">
+      <div class="feed-welcome"><div><p class="eyebrow">AFTERHOURS · COMMUNAUTÉ</p><h1>Le fil d'actualité</h1><p>Découvrez les publications de la communauté.</p></div></div>
+      <div class="feed-visitor-notice"><span>✦</span><p><strong>Mode visiteur.</strong> Les publications affichées sont fictives. Les interactions seront disponibles avec un compte.</p></div>
+      <article class="feed-composer"><div class="demo-avatar">AH</div><div class="composer-content"><p>Qu'avez-vous envie de partager ?</p><button type="button" class="composer-button" onclick="window.location.href='./index.html#rejoindre'">Connectez-vous pour publier <span>↗</span></button></div></article>
+      <div class="feed-filters"><button class="filter-active" type="button">À la une</button><button type="button" onclick="window.location.href='./index.html#rejoindre'">Récents</button></div>
+      <article class="post-card"><div class="post-head"><div class="demo-avatar avatar-rose">M</div><div class="post-author"><strong>Membre de démonstration</strong><span>Publication fictive · exemple</span></div><span class="post-menu">•••</span></div><div class="post-body"><p>J'aime les rencontres qui commencent par une conversation simple, sans pression et sans jugement. Le plus important, c'est de pouvoir être soi-même. ✨</p><div class="post-topic">#Authenticité <span>#Rencontres</span></div></div><div class="post-media-placeholder"><div class="placeholder-orb">✧</div><span>Emplacement d'une photo ou d'un média</span><small>Illustration de démonstration</small></div><div class="post-actions"><a href="./index.html#rejoindre">♡ J'aime</a><a href="./index.html#rejoindre">◯ Commenter</a><a href="./index.html#rejoindre">↗ Partager</a></div></article>
+      <article class="post-card"><div class="post-head"><div class="demo-avatar avatar-plum">L</div><div class="post-author"><strong>Membre de démonstration</strong><span>Publication fictive · exemple</span></div><span class="post-menu">•••</span></div><div class="post-body"><p>Une belle rencontre, c'est aussi respecter le rythme et les limites de chacun. La confiance se construit avec le temps. 💜</p><div class="post-topic">#Respect <span>#Consentement</span></div></div><div class="post-actions"><a href="./index.html#rejoindre">♡ J'aime</a><a href="./index.html#rejoindre">◯ Commenter</a><a href="./index.html#rejoindre">↗ Partager</a></div></article>
     </div>
-    <div class="feed-visitor-notice"><span>✦</span><p><strong>Vous naviguez sans compte.</strong> Cette page montre la présentation prévue du fil. Les cartes ci-dessous sont des exemples fictifs, pas de vraies publications.</p></div>
-    <article class="feed-composer">
-      <div class="demo-avatar">AH</div><div class="composer-content"><p>Qu'avez-vous envie de partager ?</p><button type="button" class="composer-button" onclick="window.location.href='./index.html#rejoindre'">Connectez-vous pour publier <span>↗</span></button></div>
-    </article>
-    <div class="feed-filters"><button class="filter-active" type="button">À la une</button><button type="button" onclick="window.location.href='./index.html#rejoindre'">Récents · membres</button><span>Publications de démonstration</span></div>
-    <article class="post-card">
-      <div class="post-head"><div class="demo-avatar avatar-rose">M</div><div class="post-author"><strong>Membre de démonstration</strong><span>Exemple de publication · il y a 2 h</span></div><span class="post-menu">•••</span></div>
-      <div class="post-body"><p>J'aime les rencontres qui commencent par une conversation simple, sans pression et sans jugement. Pour moi, le plus important, c'est de pouvoir être soi-même. ✨</p><div class="post-topic">#Authenticité <span>#Rencontres</span></div></div>
-      <div class="post-media-placeholder"><div class="placeholder-orb">✧</div><span>Zone photo ou média de la publication</span><small>Exemple visuel — aucun média réel</small></div>
-      <div class="post-actions"><span>♡ J'aime</span><span>◯ Commenter</span><span>↗ Partager</span><a href="./index.html#rejoindre">Interagir ↗</a></div>
-    </article>
-    <article class="post-card">
-      <div class="post-head"><div class="demo-avatar avatar-plum">L</div><div class="post-author"><strong>Membre de démonstration</strong><span>Exemple de publication · hier</span></div><span class="post-menu">•••</span></div>
-      <div class="post-body"><p>Une belle rencontre, c'est aussi respecter le rythme et les limites de chacun. La confiance se construit avec le temps. 💜</p><div class="post-topic">#Respect <span>#Consentement</span></div></div>
-      <div class="post-actions"><span>♡ J'aime</span><span>◯ Commenter</span><span>↗ Partager</span><a href="./index.html#rejoindre">Interagir ↗</a></div>
-    </article>
-    <section class="feed-section-card" id="rencontres"><div class="feed-section-title"><div><p class="eyebrow">AFFINITÉS</p><h2>Rencontres à découvrir</h2></div><span class="site-tag">À venir</span></div><p>Cette zone accueillera les profils et les suggestions de rencontres. Aucun vrai profil n'est affiché pour le moment.</p><div class="mini-profile-grid"><div><span class="mini-profile-art art-one">♡</span><strong>Profils</strong><small>À venir</small></div><div><span class="mini-profile-art art-two">✧</span><strong>Affinités</strong><small>À venir</small></div><div><span class="mini-profile-art art-three">⌕</span><strong>Recherche</strong><small>À venir</small></div></div></section>
-    <section class="feed-section-card" id="recherche"><div class="feed-section-title"><div><p class="eyebrow">DÉCOUVERTE</p><h2>Recherche</h2></div><span class="site-tag">À venir</span></div><p>Un espace de recherche permettra de trouver des personnes selon les préférences et les affinités.</p><a class="text-link" href="./index.html#rejoindre">Créer un compte ↗</a></section>
-    <section class="feed-section-card" id="messages"><div class="feed-section-title"><div><p class="eyebrow">ÉCHANGES PRIVÉS</p><h2>Messages</h2></div><span class="site-tag">Membres</span></div><p>La messagerie n'est pas encore activée. Elle sera développée dans une prochaine étape.</p><a class="text-link" href="./index.html#rejoindre">Connexion / inscription ↗</a></section>
-    <section class="feed-section-card" id="evenements"><div class="feed-section-title"><div><p class="eyebrow">SORTIES & COMMUNAUTÉ</p><h2>Événements</h2></div><span class="site-tag">À venir</span></div><p>Cette rubrique présentera les événements et activités proposés par la communauté.</p></section>
-    <section class="feed-section-card" id="profil"><div class="feed-section-title"><div><p class="eyebrow">ESPACE PERSONNEL</p><h2>Mon profil</h2></div><span class="site-tag">Membres</span></div><p>La gestion du profil, des photos et des préférences sera accessible après développement de ces fonctionnalités.</p><a class="text-link" href="./index.html#rejoindre">Créer un compte ↗</a></section>
+    <div class="tab-panel" id="panel-rencontres" data-panel="rencontres"><div class="feed-welcome"><div><p class="eyebrow">AFFINITÉS</p><h1>Rencontres</h1><p>Découvrez des personnes qui vous correspondent.</p></div></div><div class="tab-empty"><div class="empty-icon">♡</div><h2>Les profils arrivent bientôt</h2><p>L'espace rencontres sera séparé du fil, avec des profils dédiés et des préférences de recherche. Aucun faux profil ne sera présenté comme un vrai membre.</p><a class="button" href="./index.html#rejoindre">Créer un compte</a></div></div>
+    <div class="tab-panel" id="panel-recherche" data-panel="recherche"><div class="feed-welcome"><div><p class="eyebrow">DÉCOUVERTE</p><h1>Recherche</h1><p>Trouvez des profils selon vos affinités.</p></div></div><div class="tab-empty"><div class="empty-icon">⌕</div><h2>Recherche avancée</h2><p>Les filtres de recherche seront proposés dans cet onglet : préférences, centres d'intérêt et critères de rencontre.</p><a class="button" href="./index.html#rejoindre">Rejoindre AFTERHOURS</a></div></div>
+    <div class="tab-panel" id="panel-messages" data-panel="messages"><div class="feed-welcome"><div><p class="eyebrow">CONVERSATIONS PRIVÉES</p><h1>Messages</h1><p>Vos conversations, au même endroit.</p></div></div><div class="tab-empty"><div class="empty-icon">✉</div><h2>Messagerie en préparation</h2><p>La messagerie sera accessible aux membres, avec des contrôles de confidentialité et des outils pour bloquer ou signaler un compte.</p><a class="button" href="./index.html#rejoindre">Connexion / inscription</a></div></div>
+    <div class="tab-panel" id="panel-evenements" data-panel="evenements"><div class="feed-welcome"><div><p class="eyebrow">SORTIES & COMMUNAUTÉ</p><h1>Événements</h1><p>Des activités et des rencontres en dehors du fil.</p></div></div><div class="tab-empty"><div class="empty-icon">✦</div><h2>Les événements arrivent bientôt</h2><p>Cette rubrique accueillera les événements de la communauté et les informations utiles pour y participer en sécurité.</p></div></div>
+    <div class="tab-panel" id="panel-profil" data-panel="profil"><div class="feed-welcome"><div><p class="eyebrow">ESPACE PERSONNEL</p><h1>Mon profil</h1><p>Gérez votre présence sur AFTERHOURS.</p></div></div><div class="tab-empty"><div class="empty-icon">◎</div><h2>Votre espace personnel</h2><p>La modification du profil, les photos, les préférences et les paramètres de confidentialité seront regroupés ici.</p><a class="button" href="./index.html#rejoindre">Créer un compte</a></div></div>
   </section>
-  <aside class="feed-rightbar">
-    <div class="right-card"><p class="eyebrow">BIENVENUE</p><h3>Des rencontres à votre façon.</h3><p>Un espace adulte basé sur les affinités, la liberté et le respect.</p><a class="button sidebar-cta" href="./index.html#rejoindre">Rejoindre AFTERHOURS</a></div>
-    <div class="right-card right-principles"><h3>Nos principes</h3><p><span>♡</span> Consentement avant tout</p><p><span>✧</span> Respect mutuel</p><p><span>⌁</span> Vie privée protégée</p><a href="./index.html#securite">En savoir plus ↗</a></div>
-    <div class="right-footer"><span>AFTERHOURS · 18+</span><a href="./index.html#securite">Sécurité</a><span>Projet en construction</span></div>
-  </aside>
 </main>
+<script>
+document.querySelectorAll('[data-tab]').forEach(link=>link.addEventListener('click',event=>{
+ event.preventDefault();const tab=link.dataset.tab;
+ document.querySelectorAll('[data-tab]').forEach(item=>item.classList.toggle('selected',item===link));
+ document.querySelectorAll('[data-panel]').forEach(panel=>panel.classList.toggle('active',panel.dataset.panel===tab));
+ history.replaceState(null,'','#'+tab);window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
 </body></html>
