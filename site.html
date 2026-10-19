@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#f8f5f0"><meta name="description" content="AFTERHOURS — rencontres et communauté adulte.">
 <link rel="stylesheet" href="./styles.css"><title>AFTERHOURS — Explorer</title>
 <style>
-:root{--paper:#faf8f4;--line:#e9e2d9;--ink:#24211f;--muted:#77716c;--accent:#ff4b45;--pink:#ff4b45}
+:root{--paper:#f5f1f8;--line:#e1d8e9;--ink:#261a30;--muted:#776b80;--accent:#7543c8;--pink:#7543c8;--acid:#d7ff61}
 body.site-page.feed-page{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
 .ah-shell{height:100vh;min-height:620px;display:grid;grid-template-columns:174px minmax(460px,1fr) 310px;overflow:hidden}
 .ah-left{border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:stretch;background:#fbf9f6;padding:20px 12px;gap:22px}
@@ -29,6 +29,29 @@ body.site-page.feed-page{margin:0;background:var(--paper);color:var(--ink);font-
 .ah-panel{display:none}.ah-panel.active{display:block}.ah-empty{padding:48px 20px;text-align:center;border:1px solid var(--line);border-radius:15px;background:#fffdfa}.ah-empty .symbol{font-size:35px;color:var(--accent)}.ah-empty h2{font-size:21px}.ah-empty p{max-width:430px;margin:0 auto 18px;color:var(--muted);line-height:1.7;font-size:14px}
 @media(max-width:1050px){.ah-shell{grid-template-columns:150px minmax(0,1fr)}.ah-right{display:none}.ah-plus{right:22px}.ah-story-row{grid-template-columns:repeat(4,minmax(75px,1fr))}.ah-story{height:145px}}
 @media(max-width:600px){.ah-shell{display:block;height:auto;min-height:100vh;overflow:visible}.ah-left{height:58px;position:sticky;top:0;z-index:10;flex-direction:row;padding:0 10px;justify-content:space-between;border-right:0;border-bottom:1px solid var(--line)}.ah-logo{margin:0;font-size:24px}.ah-icons{flex-direction:row;width:auto;gap:1px}.ah-icons a{width:38px;min-height:42px;padding:0;justify-content:center;font-size:0}.ah-icons a .ah-nav-label{display:none}.ah-icons a .ah-nav-icon{font-size:20px}.ah-icons a:nth-child(n+4){display:none}.ah-left-bottom{display:none}.ah-main{padding:0 13px 80px;overflow:visible}.ah-top{height:58px;gap:8px}.ah-top button{padding:18px 5px;font-size:14px}.ah-top .ah-join{padding:9px 10px;font-size:11px}.ah-story-row{grid-template-columns:repeat(4,125px);overflow:auto;margin:15px -2px 22px}.ah-story{height:145px}.ah-section-head h1{font-size:19px}.ah-post-media{height:220px}.ah-plus{right:16px;bottom:16px}}
+
+/* Identité AFTERHOURS : nuit prune, violet électrique et accent citron */
+body.site-page.feed-page{background:var(--paper);color:var(--ink)}
+.ah-left,.ah-right{background:#f0ebf5;border-color:var(--line)}
+.ah-logo{color:#352047;font-size:25px;letter-spacing:-1px}
+.ah-logo:after{content:" / AFTERHOURS";display:block;font-size:9px;letter-spacing:2px;margin-top:5px;color:#7543c8}
+.ah-top{background:var(--paper);border-color:var(--line)}
+.ah-top button.active{border-color:var(--accent);color:var(--accent)}
+.ah-top .ah-join{background:#352047;color:#fff;border-radius:8px}
+.ah-icons a{border-radius:8px}
+.ah-icons a:hover,.ah-icons a.active{background:#e6dcf1;color:var(--accent)}
+.ah-story{border-radius:7px;background:linear-gradient(145deg,#9d7ce1,#49325f 58%,#21152d);box-shadow:inset 0 -70px 60px -30px #160d21cc}
+.ah-story:nth-child(2){background:linear-gradient(140deg,#d7ff61,#6f8a45 45%,#2c3a32)}
+.ah-story:nth-child(3){background:linear-gradient(140deg,#b8a0f2,#6845a3 50%,#251c35)}
+.ah-story:nth-child(4){background:linear-gradient(140deg,#f4c4a2,#a26381 45%,#301d36)}
+.ah-pills button{border-radius:8px;border-color:#cfc2dc}.ah-pills button.active{background:#352047;color:white;border-color:#352047}
+.ah-post{border-radius:8px;border-color:var(--line);background:#fff}
+.ah-follow{background:#352047;border-radius:8px}
+.ah-post-media{background:radial-gradient(ellipse at 60% 45%,#64417d,#2a1b37 55%,#130d1b)}
+.ah-event{border-radius:8px;background:#fff}.ah-event-poster{border-radius:5px;background:linear-gradient(145deg,#352047,#7543c8,#d7ff61);color:#fff}
+.ah-right-icons{border-color:var(--line)}.ah-chat-user:hover{background:#e9e0f1}
+.ah-plus{background:#d7ff61;color:#261a30;border-radius:12px;box-shadow:0 8px 24px #35204722}
+.ah-empty{background:#fff;border-color:var(--line);border-radius:8px}.ah-empty .symbol{color:var(--accent)}
 </style>
 </head>
 <body class="site-page feed-page">
@@ -36,7 +59,7 @@ body.site-page.feed-page{margin:0;background:var(--paper);color:var(--ink);font-
 <aside class="ah-left">
 <a class="ah-logo" href="./site.html" aria-label="AFTERHOURS">AH</a>
 <nav class="ah-icons" aria-label="Navigation principale">
-<a href="#plus" data-tab="plus" title="Mon compte"><span class="ah-nav-icon">♙</span><span class="ah-nav-label">Compte</span></a><a href="#fil" class="active" data-tab="fil" title="Fil d’actualité"><span class="ah-nav-icon">⌂</span><span class="ah-nav-label">Fil d’actualité</span></a><a href="#recherche" data-tab="recherche" title="Recherche"><span class="ah-nav-icon">⌕</span><span class="ah-nav-label">Recherche</span></a><a href="#rencontres" data-tab="rencontres" title="Rencontres"><span class="ah-nav-icon">♡</span><span class="ah-nav-label">Rencontres</span></a><a href="#messages" data-tab="messages" title="Messages"><span class="ah-nav-icon">✉</span><span class="ah-nav-label">Messages</span></a><a href="#evenements" data-tab="evenements" title="Événements"><span class="ah-nav-icon">▣</span><span class="ah-nav-label">Événements</span></a><a href="#plus" data-tab="plus" title="Plus de rubriques"><span class="ah-nav-icon">☰</span><span class="ah-nav-label">Plus de rubriques</span></a>
+<a href="#compte" data-tab="compte" title="Mon compte"><span class="ah-nav-icon">♙</span><span class="ah-nav-label">Compte</span></a><a href="#fil" class="active" data-tab="fil" title="Fil d’actualité"><span class="ah-nav-icon">⌂</span><span class="ah-nav-label">Fil d’actualité</span></a><a href="#recherche" data-tab="recherche" title="Recherche"><span class="ah-nav-icon">⌕</span><span class="ah-nav-label">Recherche</span></a><a href="#rencontres" data-tab="rencontres" title="Rencontres"><span class="ah-nav-icon">♡</span><span class="ah-nav-label">Rencontres</span></a><a href="#messages" data-tab="messages" title="Messages"><span class="ah-nav-icon">✉</span><span class="ah-nav-label">Messages</span></a><a href="#evenements" data-tab="evenements" title="Événements"><span class="ah-nav-icon">▣</span><span class="ah-nav-label">Événements</span></a><a href="#plus" data-tab="plus" title="Plus de rubriques"><span class="ah-nav-icon">☰</span><span class="ah-nav-label">Plus de rubriques</span></a>
 </nav>
 <div class="ah-left-bottom"><div class="ah-avatar">AH</div><small>VISITEUR</small></div>
 </aside>
@@ -56,7 +79,7 @@ body.site-page.feed-page{margin:0;background:var(--paper);color:var(--ink);font-
 <section class="ah-panel" data-panel="messages"><div class="ah-section-head"><h1>Messages</h1></div><div class="ah-empty"><div class="symbol">✉</div><h2>Messagerie privée</h2><p>La messagerie sera réservée aux membres et intégrera des outils de blocage et de signalement.</p><a class="button" href="./index.html#rejoindre">Se connecter</a></div></section>
 <section class="ah-panel" data-panel="evenements"><div class="ah-section-head"><h1>Événements</h1></div><div class="ah-empty"><div class="symbol">✦</div><h2>Les événements arrivent bientôt</h2><p>Retrouvez ici les sorties et activités proposées par la communauté.</p></div></section>
 <section class="ah-panel" data-panel="adhesions"><div class="ah-section-head"><h1>Adhésions</h1></div><div class="ah-empty"><div class="symbol">♨</div><h2>Les offres AFTERHOURS</h2><p>Les options d'adhésion seront présentées ici clairement, avec leurs tarifs et avantages avant tout paiement.</p><a class="button" href="./index.html#rejoindre">Créer un compte</a></div></section>
-<section class="ah-panel" data-panel="plus"><div class="ah-section-head"><h1>Plus</h1></div><div class="ah-empty"><div class="symbol">☰</div><h2>Autres rubriques</h2><p>Profil, paramètres, aide, sécurité et gestion de compte seront regroupés ici.</p><a class="button" href="./index.html#securite">Respect & sécurité</a></div></section>
+<section class="ah-panel" data-panel="compte"><div class="ah-section-head"><h1>Mon compte</h1></div><div class="ah-empty"><div class="symbol">♙</div><h2>Votre espace AFTERHOURS</h2><p>Retrouvez ici votre profil, vos préférences, la confidentialité, les notifications et la gestion de votre compte.</p><a class="button" href="./index.html#rejoindre">Se connecter / créer un compte</a><p style="margin-top:16px"><a href="./index.html#securite">Consulter nos règles de respect et de sécurité</a></p></div></section><section class="ah-panel" data-panel="plus"><div class="ah-section-head"><h1>Plus de rubriques</h1></div><div class="ah-empty"><div class="symbol">☰</div><h2>Besoin d’aide ?</h2><p>Accédez aux informations utiles et aux règles de la communauté.</p><a class="button" href="./index.html#securite">Respect & sécurité</a></div></section>
 </main>
 <aside class="ah-right">
 <div class="ah-right-icons"><a href="#messages" data-tab="messages" title="Messages"><b>✉</b><small>Messages</small></a><a href="#rencontres" data-tab="rencontres" title="Visites"><b>◉</b><small>Visites</small></a><a href="#rencontres" data-tab="rencontres" title="Favoris"><b>♡</b><small>Favoris</small></a></div>
