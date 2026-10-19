@@ -31,7 +31,7 @@ def init_db():
 
 class Signup(BaseModel):
     email: EmailStr
-    password: str = Field(min_length=10, max_length=128)
+    password: str = Field(min_length=8, max_length=128)
     display_name: str = Field(min_length=2, max_length=40)
     birth_date: str
 
@@ -77,20 +77,27 @@ def health():
 @app.post("/auth/signup")
 def signup(body: Signup):
     import datetime
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", body.birth_date):
+        raise HTTPException(400, "Date de naissance invalide")
     try:
         birth = datetime.date.fromisoformat(body.birth_date)
     except ValueError:
         raise HTTPException(400, "Date de naissance invalide")
     today = datetime.date.today()
+    if birth > today:
+        raise HTTPException(400, "La date de naissance ne peut pas être dans le futur")
     age = today.year - birth.year - ((today.month, today.day) < (birth.month, birth.day))
     if age < 18 or age > 120:
         raise HTTPException(400, "AFTERHOURS est réservé aux personnes majeures (18+)")
+    display_name = body.display_name.strip()
+    if len(display_name) < 2:
+        raise HTTPException(400, "Le pseudo doit contenir au moins 2 caractères")
     email = body.email.lower().strip()
     if not re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email):
         raise HTTPException(400, "Adresse email invalide")
     try:
         with db() as conn:
-            row = conn.execute("INSERT INTO users(email,password_hash,display_name,birth_date) VALUES (%s,%s,%s,%s) RETURNING id,email,display_name,birth_date,created_at", (email, hash_password(body.password), body.display_name.strip(), birth)).fetchone()
+            row = conn.execute("INSERT INTO users(email,password_hash,display_name,birth_date) VALUES (%s,%s,%s,%s) RETURNING id,email,display_name,birth_date,created_at", (email, hash_password(body.password), display_name, birth)).fetchone()
     except psycopg.errors.UniqueViolation:
         raise HTTPException(409, "Cette adresse email possède déjà un compte")
     return {"token":make_token(row["id"]), "user":{"id":row["id"],"email":row["email"],"display_name":row["display_name"],"birth_date":str(row["birth_date"])}}
