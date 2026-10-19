@@ -85,7 +85,7 @@ signupForm.addEventListener("submit", async (event) => {
       password: form.get("password")
     }) });
     localStorage.setItem("afterhours_token", result.token);
-    window.location.href = "./site.html";
+    window.location.href = "./profile.html";
   } catch (error) {
     showMessage(error.message || "Impossible de créer le compte. Réessaie.", true);
   } finally {
