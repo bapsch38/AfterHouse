@@ -30,6 +30,51 @@ body.site-page.feed-page{margin:0;background:var(--paper);color:var(--ink);font-
 @media(max-width:1050px){.ah-shell{grid-template-columns:150px minmax(0,1fr)}.ah-right{display:none}.ah-plus{right:22px}.ah-story-row{grid-template-columns:repeat(4,minmax(75px,1fr))}.ah-story{height:145px}}
 @media(max-width:600px){.ah-shell{display:block;height:auto;min-height:100vh;overflow:visible}.ah-left{height:58px;position:sticky;top:0;z-index:10;flex-direction:row;padding:0 10px;justify-content:space-between;border-right:0;border-bottom:1px solid var(--line)}.ah-logo{margin:0;font-size:24px}.ah-icons{flex-direction:row;width:auto;gap:1px}.ah-icons a{width:38px;min-height:42px;padding:0;justify-content:center;font-size:0}.ah-icons a .ah-nav-label{display:none}.ah-icons a .ah-nav-icon{font-size:20px}.ah-icons a:nth-child(n+4){display:none}.ah-left-bottom{display:none}.ah-main{padding:0 13px 80px;overflow:visible}.ah-top{height:58px;gap:8px}.ah-top button{padding:18px 5px;font-size:14px}.ah-top .ah-join{padding:9px 10px;font-size:11px}.ah-story-row{grid-template-columns:repeat(4,125px);overflow:auto;margin:15px -2px 22px}.ah-story{height:145px}.ah-section-head h1{font-size:19px}.ah-post-media{height:220px}.ah-plus{right:16px;bottom:16px}}
 
+
+/* Nouvelle composition AFTERHOURS : magazine social, pas de clone */
+.ah-shell{grid-template-columns:220px minmax(440px,1fr) 285px;background:#f5f1f8}
+.ah-left{padding:24px 15px;background:#261a30;color:#f9f4ff;border:0}
+.ah-logo{color:#fff;font-size:22px;letter-spacing:0;margin:4px 12px 25px}
+.ah-logo:after{content:"AFTERHOURS";display:block;font-size:9px;letter-spacing:3px;margin-top:7px;color:#d7ff61}
+.ah-icons a{color:#e7dced;border-radius:12px;padding:0 12px;min-height:46px}
+.ah-icons a:hover,.ah-icons a.active{background:#40304c;color:#d7ff61}
+.ah-icons a .ah-nav-icon{font-size:19px}
+.ah-left-bottom{border-top:1px solid #4d3b58;padding-top:18px;color:#d5c8df}
+.ah-avatar{background:#d7ff61;color:#261a30;border:0}
+.ah-main{padding:0 clamp(18px,3vw,42px) 40px;background:#f5f1f8}
+.ah-top{height:78px;border-bottom:0;background:#f5f1f8;gap:12px}
+.ah-top button{padding:13px 18px;border:0;border-radius:12px;color:#71637d}
+.ah-top button.active{background:#e8def2;color:#352047}
+.ah-top .ah-join{background:#7543c8;color:white;border-radius:12px}
+.ah-story-row{grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin:20px 0 28px}
+.ah-story{height:128px;border-radius:14px;padding:16px;background:linear-gradient(120deg,#7543c8,#352047)!important;box-shadow:none}
+.ah-story:nth-child(2){background:linear-gradient(120deg,#d7ff61,#819b35)!important;color:#261a30}
+.ah-story:nth-child(3){background:linear-gradient(120deg,#efc4a8,#b65c7e)!important}
+.ah-story:nth-child(4){display:none}
+.ah-story strong{font-size:15px}.ah-story small{display:block;margin-top:5px}
+.ah-section-head{margin:12px 0 18px}.ah-section-head h1{font-size:25px;letter-spacing:-.5px;color:#352047}
+.ah-pills{gap:8px}.ah-pills button{border-radius:9px;background:#fff;border-color:#e1d8e9}.ah-pills button.active{background:#352047;border-color:#352047}
+.ah-event{border:0;background:#e8def2;border-radius:13px;padding:14px;margin-bottom:20px}
+.ah-event-poster{border-radius:9px;background:#352047!important;color:#d7ff61}
+.ah-event strong{color:#7543c8}
+.ah-post{border:0;border-radius:14px;box-shadow:0 4px 20px #3520470a;background:#fff;margin-bottom:22px}
+.ah-post-head{padding:18px 20px}.ah-person{border-radius:14px;background:#e8def2;color:#352047}
+.ah-follow{background:#352047;border-radius:9px}
+.ah-post-copy{font-size:15px;padding:0 20px 18px}
+.ah-post-media{height:240px;background:linear-gradient(135deg,#352047,#7543c8 60%,#d7ff61)!important}
+.ah-post-actions{padding:15px 20px;color:#665873}
+.ah-right{background:#fff;border-left:1px solid #e6ddeb}
+.ah-right-icons{height:78px;border-color:#eee7f2}
+.ah-right-icons a{color:#352047}.ah-right-icons small{color:#81758a}
+.ah-chat-title{padding:18px 16px;color:#352047;border-bottom:1px solid #eee7f2}
+.ah-chat-title strong{font-size:16px}.ah-chat-filter{background:#f5f1f8;border-radius:8px;padding:8px;font-size:11px}
+.ah-chat-user{border-color:#f0eaf4;padding:16px 14px}.ah-chat-face{border-radius:15px;background:#e8def2;color:#352047}
+.ah-chat-user:hover{background:#f5f1f8}
+.ah-plus{background:#d7ff61;color:#261a30;border-radius:16px;width:54px;height:54px;right:300px}
+.ah-empty{border:0;background:#fff;border-radius:16px;padding:50px 24px;box-shadow:0 4px 20px #3520470a}
+@media(max-width:1050px){.ah-shell{grid-template-columns:190px minmax(0,1fr)}.ah-story-row{grid-template-columns:repeat(3,minmax(80px,1fr))}.ah-right{display:none}.ah-plus{right:22px}}
+@media(max-width:600px){.ah-left{background:#261a30}.ah-logo:after{display:none}.ah-story-row{grid-template-columns:repeat(3,130px)}.ah-story:nth-child(4){display:flex}.ah-top{gap:3px}.ah-top button{padding:12px 8px}.ah-plus{right:16px}}
+
 /* Identité AFTERHOURS : nuit prune, violet électrique et accent citron */
 body.site-page.feed-page{background:var(--paper);color:var(--ink)}
 .ah-left,.ah-right{background:#f0ebf5;border-color:var(--line)}
