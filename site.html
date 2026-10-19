@@ -140,6 +140,72 @@ body.site-page.feed-page{background:var(--paper);color:var(--ink)}
 .ah-plus{right:285px;border-radius:50%;background:#d7ff61;color:#352047}
 @media(max-width:1050px){.ah-shell{grid-template-columns:76px minmax(0,1fr)}.ah-right{display:none}.ah-plus{right:22px}}
 @media(max-width:600px){.ah-left{height:65px;flex-direction:row;justify-content:space-between;padding:0 8px;background:#f7f4f8}.ah-logo{width:42px;height:42px;margin:0;border-radius:13px}.ah-icons{flex-direction:row;gap:2px}.ah-icons a{width:43px;height:45px;min-height:45px;border-radius:12px}.ah-icons a .ah-nav-label{display:none}.ah-icons a:nth-child(n+5){display:none}.ah-left-bottom{display:none}.ah-story-row{grid-template-columns:repeat(3,130px)}.ah-top{height:65px}.ah-main{padding:0 13px 45px}}
+
+/* Cohérence avec la page d'accueil : prune profond, rose poudré, surfaces claires */
+:root{--paper:#fbf5f8;--line:#ead7e1;--ink:#2a1423;--muted:#806a79;--accent:#b94f7b;--pink:#c85d88;--acid:#f3a9c7}
+body.site-page.feed-page{background:var(--paper);color:var(--ink)}
+.ah-shell,.ah-main{background:var(--paper)}
+.ah-left{background:#261321;border-right:1px solid #43253a}
+.ah-logo{background:linear-gradient(145deg,#f5bfd3,#ce729b);color:#2a1423;box-shadow:0 7px 20px #160b1425;border-radius:15px}
+.ah-icons a{color:#e8d5df}
+.ah-icons a:hover{background:#43263a;color:#ffd9e7}
+.ah-icons a.active{background:#f3a9c7;color:#2a1423;box-shadow:0 5px 15px #10060d33}
+.ah-left-bottom{border-color:#4b2b40;color:#d8bcca}
+.ah-avatar{background:#f3a9c7;color:#2a1423}
+.ah-top{background:var(--paper)}
+.ah-top button{min-height:42px;color:#806a79;transition:background .18s,color .18s,transform .18s}
+.ah-top button:hover{background:#f2e2e9;color:#55263e}
+.ah-top button.active{background:#3b1c30;color:#fff5f9}
+.ah-top .ah-join{background:linear-gradient(120deg,#f3b6ce,#d878a0);color:#301321;min-height:42px;padding:11px 18px;font-weight:750;box-shadow:0 5px 16px #9b3c651c}
+.ah-story{background:linear-gradient(135deg,#542640,#291421)!important;color:#fff5f9;border-radius:18px 18px 18px 5px;transition:transform .18s,box-shadow .18s}
+.ah-story:hover{transform:translateY(-2px);box-shadow:0 9px 20px #4a1b3020}
+.ah-story:nth-child(2){background:linear-gradient(135deg,#f4c4d7,#e9a4bf)!important;color:#301321}
+.ah-story:nth-child(3){background:linear-gradient(135deg,#ead8e3,#d4b2c4)!important;color:#301321}
+.ah-section-head h1{color:#351629}
+.ah-pills button{min-height:38px;padding:9px 16px;background:#fffafd;border:1px solid #e7d2dd;color:#694558;transition:all .18s}
+.ah-pills button:hover{border-color:#c85d88;background:#f9eaf0}
+.ah-pills button.active{background:#4b2139;border-color:#4b2139;color:#fff7fa}
+.ah-post{background:#fffdfd;border-color:#eedde5;box-shadow:0 6px 22px #4a1c3009}
+.ah-person{background:#f1d4e0;color:#54243d}
+.ah-follow{min-height:38px;padding:9px 17px;background:#f7e7ee;color:#54243d;border:1px solid #e9c7d7;font-weight:700;transition:all .18s}
+.ah-follow:hover{background:#4b2139;border-color:#4b2139;color:#fff}
+.ah-post-media{background:radial-gradient(circle at 70% 25%,#b65c83,#4b2139 52%,#24121f)!important}
+.ah-post-actions{gap:10px;flex-wrap:wrap}
+.ah-post-actions a{display:inline-flex;align-items:center;min-height:38px;padding:7px 12px;border-radius:10px;color:#70465b;transition:background .18s,color .18s}
+.ah-post-actions a:hover{background:#f7e7ee;color:#8f315b}
+.ah-event{background:#f5e7ee;border:1px solid #eed7e2}
+.ah-event-poster{background:#4b2139!important;color:#f3a9c7}
+.ah-event strong,.ah-empty .symbol{color:#b94f7b}
+.ah-right{background:#fffafd;border-left-color:#ead7e1}
+.ah-right-icons{border-color:#ead7e1}
+.ah-right-icons a{min-height:56px;padding:8px;border-radius:12px;transition:background .18s}
+.ah-right-icons a:hover{background:#f8e9f0}
+.ah-right-icons a b{color:#8e3b60}
+.ah-chat-title{color:#351629}
+.ah-chat-filter,.ah-chat-icon{min-height:36px;border-radius:9px;padding:7px 10px}
+.ah-chat-filter{background:#f8eaf0;color:#70465b}
+.ah-chat-icon:hover{background:#f8eaf0;color:#8e3b60}
+.ah-chat-user{transition:background .18s}
+.ah-chat-user:hover{background:#fbf0f5}
+.ah-chat-face{background:#f1d4e0;color:#54243d}
+.ah-plus{background:linear-gradient(135deg,#f3b6ce,#d878a0);color:#301321;box-shadow:0 8px 24px #9b3c6528;transition:transform .18s,box-shadow .18s}
+.ah-plus:hover{transform:translateY(-3px);box-shadow:0 12px 28px #9b3c6535}
+.ah-empty{background:#fffdfd;border:1px solid #eedde5;box-shadow:0 6px 22px #4a1c3009}
+.ah-empty .button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 20px;border:0;border-radius:999px;background:linear-gradient(120deg,#f3b6ce,#d878a0);color:#301321;font-weight:750;box-shadow:0 6px 18px #9b3c6520;transition:transform .18s,filter .18s}
+.ah-empty .button:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.ah-shell button,.ah-shell a{ -webkit-tap-highlight-color:transparent}
+.ah-shell button:focus-visible,.ah-shell a:focus-visible,.ah-chat-user:focus-visible{outline:3px solid #c85d88;outline-offset:3px}
+.ah-shell button:disabled{opacity:.55;cursor:not-allowed}
+@media(max-width:600px){
+ .ah-top .ah-join{min-height:38px;padding:9px 12px}
+ .ah-top button{min-height:40px}
+ .ah-pills{gap:7px}
+ .ah-pills button{min-height:40px;padding:9px 13px}
+ .ah-follow{min-height:40px;padding:9px 13px}
+ .ah-post-actions a{min-height:42px;padding:8px 12px}
+ .ah-plus{width:52px;height:52px;bottom:18px}
+}
+
 </style>
 </head>
 <body class="site-page feed-page">
