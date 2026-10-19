@@ -345,6 +345,17 @@ html,body{scrollbar-width:none;-ms-overflow-style:none}
 html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 </style>
 
+
+<style id="ah-final-scrollbar-and-panel-fixes">
+/* Masquer toutes les barres de défilement sans bloquer le scroll */
+*{scrollbar-width:none!important;-ms-overflow-style:none!important}
+*::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+html,body{overflow-x:hidden!important}
+.ah-shell:has(.ah-right-collapsed) .ah-plus{right:70px!important}
+@media(max-width:1050px){.ah-shell:has(.ah-right-collapsed) .ah-plus{right:22px!important}}
+@media(max-width:600px){.ah-shell:has(.ah-right-collapsed) .ah-plus{right:16px!important}}
+</style>
+
 </head>
 <body class="site-page feed-page">
 <div class="ah-shell">
@@ -374,7 +385,7 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 <section class="ah-panel" data-panel="compte"><div class="ah-section-head"><h1>Mon compte</h1></div><div class="ah-empty"><div class="symbol">♙</div><h2>Votre espace AFTERHOURS</h2><p>Retrouvez ici votre profil, vos préférences, la confidentialité, les notifications et la gestion de votre compte.</p><a class="button" href="./index.html#rejoindre">Se connecter / créer un compte</a><p style="margin-top:16px"><a href="./index.html#securite">Consulter nos règles de respect et de sécurité</a></p></div></section><section class="ah-panel" data-panel="plus"><div class="ah-section-head"><h1>Plus de rubriques</h1></div><div class="ah-empty"><div class="symbol">☰</div><h2>Besoin d’aide ?</h2><p>Accédez aux informations utiles et aux règles de la communauté.</p><a class="button" href="./index.html#securite">Respect & sécurité</a></div></section>
 </main>
 <aside class="ah-right ah-right-collapsed" aria-label="Panneau latéral secondaire">
-<button class="ah-right-toggle" type="button" aria-expanded="false" aria-controls="ah-right-content" title="Déplier le panneau latéral"><span class="ah-toggle-arrow" aria-hidden="true">‹</span><span class="ah-toggle-label">Ouvrir le panneau</span></button>
+<button class="ah-right-toggle" type="button" aria-expanded="false" aria-controls="ah-right-content" title="Afficher le panneau latéral" aria-label="Afficher le panneau latéral"><span class="ah-toggle-arrow" aria-hidden="true">‹</span></button>
 <div class="ah-right-content" id="ah-right-content">
 <div class="ah-right-icons"><a href="#messages" data-tab="messages" title="Messages"><b>✉</b><small>Messages</small></a><a href="#rencontres" data-tab="rencontres" title="Visites"><b>◉</b><small>Visites</small></a><a href="#rencontres" data-tab="rencontres" title="Favoris"><b>♡</b><small>Favoris</small></a></div>
 <div class="ah-chat-title"><strong>Chat</strong><button type="button" class="ah-chat-filter" data-tab="rencontres">Près de chez vous⌄</button><button type="button" class="ah-chat-icon" data-tab="recherche" aria-label="Rechercher des membres">⌕</button><button type="button" class="ah-chat-icon" data-tab="messages" aria-label="Ouvrir les messages">◖))</button></div>
@@ -402,7 +413,7 @@ if (rightPanel && rightPanelToggle) {
     const collapsed = rightPanel.classList.toggle('ah-right-collapsed');
     rightPanelToggle.setAttribute('aria-expanded', String(!collapsed));
     rightPanelToggle.setAttribute('title', collapsed ? 'Déplier le panneau latéral' : 'Replier le panneau latéral');
-    rightPanelToggle.querySelector('.ah-toggle-label').textContent = collapsed ? 'Ouvrir le panneau' : 'Replier le panneau';
+    rightPanelToggle.setAttribute('aria-label', collapsed ? 'Afficher le panneau latéral' : 'Masquer le panneau latéral');
   });
 }
 </script>
