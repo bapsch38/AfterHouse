@@ -206,6 +206,87 @@ body.site-page.feed-page{background:var(--paper);color:var(--ink)}
  .ah-plus{width:52px;height:52px;bottom:18px}
 }
 
+
+/* Refonte sobre et lisible : menu latéral compact, tons prune et neutres */
+:root{--paper:#f6f5f3;--line:#e5e0e3;--ink:#282329;--muted:#777078;--accent:#765266;--pink:#b88da4}
+body.site-page.feed-page,.ah-shell,.ah-main{background:var(--paper);color:var(--ink)}
+.ah-shell{grid-template-columns:208px minmax(440px,1fr) 270px}
+.ah-left{align-items:stretch;padding:24px 14px;background:#2b2029;color:#f6f0f4;border-right:0;gap:22px}
+.ah-logo{width:auto;height:auto;min-height:48px;display:flex;align-items:center;justify-content:flex-start;margin:0 6px 12px;padding:0 12px;border-radius:10px;background:transparent;color:#fff;font-size:22px;letter-spacing:-.5px;box-shadow:none}
+.ah-logo:before{content:"AH";display:grid;place-items:center;width:36px;height:36px;margin-right:10px;border-radius:9px;background:#bda3b1;color:#2b2029;font-size:14px;letter-spacing:-1px}
+.ah-icons{align-items:stretch;gap:5px}
+.ah-icons a{width:100%;height:auto;min-height:46px;flex-direction:row;justify-content:flex-start;gap:13px;padding:0 12px;border-radius:9px;color:#d3c9d0;font-size:13px;font-weight:500}
+.ah-icons a .ah-nav-icon{width:24px;font-size:19px;text-align:center;color:#c7b4c0}
+.ah-icons a .ah-nav-label{font-size:13px;line-height:1.2;white-space:normal}
+.ah-icons a:hover{background:#40323d;color:#fff}
+.ah-icons a:hover .ah-nav-icon{color:#fff}
+.ah-icons a.active{background:#e8dfe5;color:#382735;box-shadow:none;font-weight:700}
+.ah-icons a.active .ah-nav-icon{color:#765266}
+.ah-left-bottom{display:flex;align-items:center;justify-items:initial;gap:10px;margin-top:auto;padding:16px 7px 0;border-top:1px solid #4a3a45;color:#c9bdc5;font-size:10px}
+.ah-avatar{width:34px;height:34px;border-radius:50%;background:#bda3b1;color:#2b2029;font-size:11px}
+.ah-main{padding:0 clamp(18px,3vw,42px) 48px}
+.ah-top{height:76px;gap:10px}
+.ah-top button{min-height:40px;padding:10px 16px;border-radius:9px;color:#777078}
+.ah-top button:hover{background:#ebe7e9;color:#382735}
+.ah-top button.active{background:#e7dfe5;color:#382735}
+.ah-top .ah-join{min-height:40px;background:#3b2b37;color:#fff;padding:10px 16px;border-radius:9px;box-shadow:none}
+.ah-story{height:112px;border-radius:12px;background:#493844!important;color:#fff!important;box-shadow:none}
+.ah-story:nth-child(2){background:#e7e0e4!important;color:#382735!important}
+.ah-story:nth-child(3){background:#d8d0d5!important;color:#382735!important}
+.ah-story:hover{transform:translateY(-1px);box-shadow:0 5px 15px #2823290c}
+.ah-section-head h1{color:#302730}
+.ah-pills button{min-height:38px;padding:8px 15px;border-radius:8px;background:#fff;border:1px solid #ded8dd;color:#625962}
+.ah-pills button:hover{background:#eee9ed;border-color:#c8bac4}
+.ah-pills button.active{background:#493844;border-color:#493844;color:#fff}
+.ah-post{background:#fff;border:1px solid #e8e2e6;border-radius:14px;box-shadow:0 3px 12px #28232907}
+.ah-person{background:#e6dce2;color:#493844}
+.ah-follow{min-height:36px;padding:8px 15px;border-radius:8px;background:#f0eaee;color:#493844;border:1px solid #ded3db;font-weight:650}
+.ah-follow:hover{background:#493844;border-color:#493844;color:#fff}
+.ah-post-media{background:radial-gradient(circle at 70% 25%,#806b7b,#493844 55%,#282029)!important}
+.ah-post-actions{gap:8px;flex-wrap:wrap}
+.ah-post-actions a{min-height:38px;padding:8px 11px;border-radius:8px;color:#6f626c}
+.ah-post-actions a:hover{background:#f0eaee;color:#493844}
+.ah-event{background:#eee9ed;border:1px solid #e4dce2;border-radius:12px}
+.ah-event-poster{background:#493844!important;color:#e7dfe5}
+.ah-event strong,.ah-empty .symbol{color:#765266}
+.ah-right{background:#fbfaf9;border-left:1px solid #e5e0e3}
+.ah-right-icons{border-color:#e5e0e3}
+.ah-right-icons a{min-height:54px;border-radius:9px}
+.ah-right-icons a:hover{background:#f0ecef}
+.ah-right-icons a b{color:#765266}
+.ah-chat-title{color:#302730}
+.ah-chat-filter,.ah-chat-icon{min-height:34px;border-radius:8px;padding:6px 9px}
+.ah-chat-filter{background:#f0ecef;color:#625962}
+.ah-chat-icon:hover{background:#f0ecef;color:#493844}
+.ah-chat-user{transition:background .15s}
+.ah-chat-user:hover{background:#f3eff1}
+.ah-chat-face{background:#e6dce2;color:#493844}
+.ah-plus{background:#493844;color:#fff;border-radius:13px;box-shadow:0 5px 18px #28232920}
+.ah-plus:hover{background:#62495a;transform:translateY(-2px)}
+.ah-empty{background:#fff;border:1px solid #e8e2e6;border-radius:14px;box-shadow:0 3px 12px #28232907}
+.ah-empty .button{min-height:42px;padding:11px 18px;border-radius:9px;background:#493844;color:#fff;box-shadow:none;font-weight:650}
+.ah-empty .button:hover{background:#62495a;transform:translateY(-1px)}
+.ah-shell button:focus-visible,.ah-shell a:focus-visible,.ah-chat-user:focus-visible{outline:2px solid #9b7c90;outline-offset:3px}
+@media(max-width:1050px){.ah-shell{grid-template-columns:190px minmax(0,1fr)}}
+@media(max-width:600px){
+ .ah-left{height:auto;min-height:60px;flex-direction:row;align-items:center;justify-content:space-between;padding:7px 10px;background:#2b2029}
+ .ah-logo{width:auto;min-height:42px;margin:0;padding:0 5px;font-size:0}
+ .ah-logo:before{width:36px;height:36px;margin:0}
+ .ah-icons{flex-direction:row;align-items:center;gap:2px}
+ .ah-icons a{width:39px;height:42px;min-height:42px;justify-content:center;padding:0;border-radius:8px}
+ .ah-icons a .ah-nav-icon{width:auto;font-size:19px}
+ .ah-icons a .ah-nav-label{display:none}
+ .ah-icons a:nth-child(n+5){display:none}
+ .ah-left-bottom{display:none}
+ .ah-top{gap:4px}
+ .ah-top button{padding:9px 10px;font-size:12px}
+ .ah-top .ah-join{padding:9px 10px;font-size:11px}
+ .ah-story-row{grid-template-columns:repeat(3,130px)}
+ .ah-pills button{min-height:40px}
+ .ah-post-actions a{min-height:40px}
+ .ah-plus{width:50px;height:50px}
+}
+
 </style>
 </head>
 <body class="site-page feed-page">
