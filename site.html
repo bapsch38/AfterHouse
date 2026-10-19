@@ -336,6 +336,15 @@ button:hover,.button:hover{filter:brightness(1.04)}
 @media(max-width:600px){.ah-shell:has(.ah-right-collapsed),.ah-shell{display:block}.ah-right{display:none}}
 </style>
 
+
+<style id="ah-hide-right-scrollbar">
+/* Masque la barre de défilement visible sans désactiver le défilement */
+.ah-main,.ah-chat-list,.ah-story-row{scrollbar-width:none;-ms-overflow-style:none}
+.ah-main::-webkit-scrollbar,.ah-chat-list::-webkit-scrollbar,.ah-story-row::-webkit-scrollbar{display:none;width:0;height:0}
+html,body{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
+</style>
+
 </head>
 <body class="site-page feed-page">
 <div class="ah-shell">
