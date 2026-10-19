@@ -124,3 +124,21 @@ async function restoreSession() {
   }
 }
 restoreSession();
+
+
+// Open account access only in a modal popup.
+const accountDialog = $("#account-dialog");
+const closeAccountDialog = $("#close-account-dialog");
+document.querySelectorAll("[data-account-open]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!accountDialog.open) accountDialog.showModal();
+  });
+});
+closeAccountDialog.addEventListener("click", () => accountDialog.close());
+accountDialog.addEventListener("click", (event) => {
+  if (event.target === accountDialog) accountDialog.close();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && accountDialog.open) accountDialog.close();
+});
