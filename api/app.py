@@ -28,6 +28,13 @@ def init_db():
             created_at TIMESTAMPTZ NOT NULL DEFAULT now()
           )
         """)
+        conn.execute("""
+          CREATE TABLE IF NOT EXISTS user_profiles (
+            user_id BIGINT PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+            profile_data JSONB NOT NULL DEFAULT '{}'::jsonb,
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+          )
+        """)
 
 class Signup(BaseModel):
     email: EmailStr
@@ -109,6 +116,52 @@ def login(body: Login):
     if not row or not verify_password(body.password, row["password_hash"]):
         raise HTTPException(401, "Email ou mot de passe incorrect")
     return {"token":make_token(row["id"]), "user":{"id":row["id"],"email":row["email"],"display_name":row["display_name"],"birth_date":str(row["birth_date"])}}
+
+
+class ProfilePayload(BaseModel):
+    profile: dict = Field(default_factory=dict)
+
+@app.get("/profile")
+def get_profile(authorization: str = Header(default="")):
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(401, "Connexion requise")
+    user_id = read_token(authorization[7:])
+    with db() as conn:
+        row = conn.execute("SELECT profile_data, updated_at FROM user_profiles WHERE user_id=%s", (user_id,)).fetchone()
+    if not row:
+        return {"profile": {}, "updated_at": None}
+    return {"profile": row["profile_data"], "updated_at": row["updated_at"].isoformat()}
+
+@app.post("/profile")
+def save_profile(body: ProfilePayload, authorization: str = Header(default="")):
+    if not authorization.startswith("Bearer "):
+        raise HTTPException(401, "Connexion requise")
+    user_id = read_token(authorization[7:])
+    data = body.profile
+    if len(json.dumps(data, ensure_ascii=False)) > 50000:
+        raise HTTPException(413, "Le profil est trop volumineux")
+    allowed_types = {"individual", "couple"}
+    if data.get("account_type") not in (None, *allowed_types):
+        raise HTTPException(400, "Type de compte invalide")
+    for field in ("age_min", "age_max", "distance", "height"):
+        if data.get(field) not in (None, ""):
+            try:
+                value = int(data[field])
+            except (TypeError, ValueError):
+                raise HTTPException(400, "Valeur numérique invalide")
+            bounds = {"age_min": (18, 99), "age_max": (18, 99), "distance": (1, 1000), "height": (100, 250)}[field]
+            if not bounds[0] <= value <= bounds[1]:
+                raise HTTPException(400, "Valeur hors limites")
+    if data.get("age_min") and data.get("age_max") and int(data["age_min"]) > int(data["age_max"]):
+        raise HTTPException(400, "L'âge minimum ne peut pas dépasser l'âge maximum")
+    with db() as conn:
+        conn.execute("""
+          INSERT INTO user_profiles(user_id, profile_data, updated_at)
+          VALUES (%s, %s::jsonb, now())
+          ON CONFLICT (user_id) DO UPDATE
+          SET profile_data=EXCLUDED.profile_data, updated_at=now()
+        """, (user_id, json.dumps(data, ensure_ascii=False)))
+    return {"status": "ok", "profile": data}
 
 @app.get("/me")
 def me(authorization: str = Header(default="")):
