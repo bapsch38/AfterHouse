@@ -67,11 +67,43 @@
     </section>
 
     <section class="join section" id="rejoindre">
-      <p class="eyebrow">LE PROJET PREND FORME</p>
-      <h2>Et si la suite<br><em>se construisait ensemble&nbsp;?</em></h2>
-      <p class="section-lead">AFTERHOURS est en cours de création. Nous préparons une expérience de rencontres adultes qui place les personnes et leurs limites au centre.</p>
-      <div class="notice"><span class="notice-dot"></span><span>Le site est actuellement une maquette. La création de compte, les profils, la messagerie et les paiements ne sont pas encore disponibles.</span></div>
-      <a class="button" href="#concept">En savoir plus <span aria-hidden="true">↑</span></a>
+      <p class="eyebrow">REJOINDRE AFTERHOURS</p>
+      <h2>Votre prochaine rencontre<br><em>commence ici.</em></h2>
+      <p class="section-lead">Créez votre compte pour préparer votre espace personnel. Inscription réservée aux personnes majeures de 18 ans et plus.</p>
+      <div class="account-panel">
+        <div class="account-tabs" role="tablist" aria-label="Compte">
+          <button class="account-tab active" id="show-signup" type="button" role="tab" aria-selected="true">Créer un compte</button>
+          <button class="account-tab" id="show-login" type="button" role="tab" aria-selected="false">J'ai déjà un compte</button>
+        </div>
+        <form id="signup-form" class="account-form">
+          <label for="signup-name">Pseudo</label>
+          <input id="signup-name" name="display_name" autocomplete="nickname" minlength="2" maxlength="40" required placeholder="Votre pseudo">
+          <label for="signup-email">Adresse e-mail</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr">
+          <label for="signup-birth">Date de naissance</label>
+          <input id="signup-birth" name="birth_date" type="date" autocomplete="bday" required>
+          <label for="signup-password">Mot de passe (10 caractères minimum)</label>
+          <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="10" maxlength="128" required placeholder="10 caractères minimum">
+          <label class="consent-line"><input type="checkbox" required> Je confirme avoir au moins 18 ans et accepter les règles de respect et de consentement.</label>
+          <button class="button account-submit" type="submit">Créer mon compte <span aria-hidden="true">↗</span></button>
+        </form>
+        <form id="login-form" class="account-form" hidden>
+          <label for="login-email">Adresse e-mail</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr">
+          <label for="login-password">Mot de passe</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Votre mot de passe">
+          <button class="button account-submit" type="submit">Me connecter <span aria-hidden="true">↗</span></button>
+        </form>
+        <div id="account-message" class="account-message" role="status" aria-live="polite"></div>
+        <div id="account-profile" class="account-profile" hidden>
+          <p class="eyebrow">ESPACE PERSONNEL</p>
+          <h3>Bienvenue, <span id="profile-name"></span></h3>
+          <p id="profile-email"></p>
+          <p class="profile-note">Ton compte est créé. Les profils publics et la messagerie seront ajoutés dans les prochaines étapes.</p>
+          <button id="logout-button" class="text-link logout-button" type="button">Se déconnecter</button>
+        </div>
+      </div>
+      <p class="account-footnote">Les comptes sont en phase de test. Ne réutilisez pas le mot de passe d'un autre service.</p>
     </section>
   </main>
 
