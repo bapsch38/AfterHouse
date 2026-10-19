@@ -314,6 +314,26 @@ button,.button,a{transition:background-color .18s ease,color .18s ease,transform
 button:hover,.button:hover{filter:brightness(1.04)}
 @media(max-width:760px){.ah-sidebar{background:#382532!important}}
 </style>
+
+<style id="ah-collapsible-right-panel">
+/* Panneau droit repliable pour libérer de l'espace au fil */
+.ah-shell{grid-template-columns:208px minmax(440px,1fr) 270px;transition:grid-template-columns .24s ease}
+.ah-right{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;transition:background .2s ease}
+.ah-right-toggle{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;width:100%;padding:10px 12px;border:0;border-bottom:1px solid #ead7e1;background:#fff8fb;color:#8f3d60;font-size:12px;font-weight:600;cursor:pointer}
+.ah-toggle-arrow{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#f7e5ed;font-size:22px;line-height:1;transition:transform .24s ease}
+.ah-right-content{min-width:0;overflow:hidden;opacity:1;transition:opacity .16s ease}
+.ah-right-collapsed .ah-right-content{display:none}
+.ah-shell:has(.ah-right-collapsed){grid-template-columns:208px minmax(440px,1fr) 48px}
+.ah-right-collapsed .ah-right-toggle{height:100%;min-height:0;flex-direction:column;justify-content:flex-start;padding:14px 6px;gap:10px;border-bottom:0;border-left:1px solid #ead7e1;background:#fff}
+.ah-right-collapsed .ah-toggle-arrow{transform:rotate(180deg)}
+.ah-right-collapsed .ah-toggle-label{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.04em}
+.ah-right-collapsed{border-left:0!important;box-shadow:none!important}
+.ah-right-collapsed .ah-right-toggle:hover{background:#fff1f6}
+.ah-right-toggle:focus-visible{outline:3px solid #c85d88;outline-offset:-3px}
+@media(max-width:1050px){.ah-shell:has(.ah-right-collapsed),.ah-shell{grid-template-columns:190px minmax(0,1fr)}.ah-right{display:none}}
+@media(max-width:600px){.ah-shell:has(.ah-right-collapsed),.ah-shell{display:block}.ah-right{display:none}}
+</style>
+
 </head>
 <body class="site-page feed-page">
 <div class="ah-shell">
@@ -342,7 +362,9 @@ button:hover,.button:hover{filter:brightness(1.04)}
 <section class="ah-panel" data-panel="adhesions"><div class="ah-section-head"><h1>Adhésions</h1></div><div class="ah-empty"><div class="symbol">♨</div><h2>Les offres AFTERHOURS</h2><p>Les options d'adhésion seront présentées ici clairement, avec leurs tarifs et avantages avant tout paiement.</p><a class="button" href="./index.html#rejoindre">Créer un compte</a></div></section>
 <section class="ah-panel" data-panel="compte"><div class="ah-section-head"><h1>Mon compte</h1></div><div class="ah-empty"><div class="symbol">♙</div><h2>Votre espace AFTERHOURS</h2><p>Retrouvez ici votre profil, vos préférences, la confidentialité, les notifications et la gestion de votre compte.</p><a class="button" href="./index.html#rejoindre">Se connecter / créer un compte</a><p style="margin-top:16px"><a href="./index.html#securite">Consulter nos règles de respect et de sécurité</a></p></div></section><section class="ah-panel" data-panel="plus"><div class="ah-section-head"><h1>Plus de rubriques</h1></div><div class="ah-empty"><div class="symbol">☰</div><h2>Besoin d’aide ?</h2><p>Accédez aux informations utiles et aux règles de la communauté.</p><a class="button" href="./index.html#securite">Respect & sécurité</a></div></section>
 </main>
-<aside class="ah-right">
+<aside class="ah-right ah-right-collapsed" aria-label="Panneau latéral secondaire">
+<button class="ah-right-toggle" type="button" aria-expanded="false" aria-controls="ah-right-content" title="Déplier le panneau latéral"><span class="ah-toggle-arrow" aria-hidden="true">‹</span><span class="ah-toggle-label">Ouvrir le panneau</span></button>
+<div class="ah-right-content" id="ah-right-content">
 <div class="ah-right-icons"><a href="#messages" data-tab="messages" title="Messages"><b>✉</b><small>Messages</small></a><a href="#rencontres" data-tab="rencontres" title="Visites"><b>◉</b><small>Visites</small></a><a href="#rencontres" data-tab="rencontres" title="Favoris"><b>♡</b><small>Favoris</small></a></div>
 <div class="ah-chat-title"><strong>Chat</strong><button type="button" class="ah-chat-filter" data-tab="rencontres">Près de chez vous⌄</button><button type="button" class="ah-chat-icon" data-tab="recherche" aria-label="Rechercher des membres">⌕</button><button type="button" class="ah-chat-icon" data-tab="messages" aria-label="Ouvrir les messages">◖))</button></div>
 <div class="ah-chat-list">
@@ -350,6 +372,7 @@ button:hover,.button:hover{filter:brightness(1.04)}
 <div class="ah-chat-user" role="button" tabindex="0" data-tab="rencontres"><div class="ah-chat-face" style="background:linear-gradient(135deg,#b6b8a1,#4d5b4e)">✧</div><span class="ah-online"></span><div class="ah-chat-info"><strong>Rencontres</strong><small>Des profils selon vos affinités</small></div></div>
 <div class="ah-chat-user" role="button" tabindex="0" data-tab="messages"><div class="ah-chat-face" style="background:linear-gradient(135deg,#edb8ae,#a45b58)">♡</div><span class="ah-online"></span><div class="ah-chat-info"><strong>Discussions</strong><small>Échangez en toute confiance</small></div></div>
 <div class="ah-chat-user" role="button" tabindex="0" data-tab="evenements"><div class="ah-chat-face" style="background:linear-gradient(135deg,#c9b4d7,#67516e)">✦</div><span class="ah-online"></span><div class="ah-chat-info"><strong>Sorties</strong><small>Les événements à venir</small></div></div>
+</div>
 </div>
 </aside>
 <button class="ah-plus" title="Créer une publication" onclick="activateTab('fil');document.querySelector('.ah-post')?.scrollIntoView({behavior:'smooth',block:'start'});">+</button>
@@ -359,4 +382,18 @@ function activateTab(tab){document.querySelectorAll('[data-tab]').forEach(el=>el
 document.querySelectorAll('[data-tab]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();activateTab(el.dataset.tab);}));document.querySelectorAll('.ah-chat-user[data-tab]').forEach(el=>{el.addEventListener('click',()=>activateTab(el.dataset.tab));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activateTab(el.dataset.tab);}});});
 document.querySelectorAll('[data-filter]').forEach(el=>el.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===el));}));
 </script>
+
+<script>
+const rightPanel = document.querySelector('.ah-right');
+const rightPanelToggle = document.querySelector('.ah-right-toggle');
+if (rightPanel && rightPanelToggle) {
+  rightPanelToggle.addEventListener('click', () => {
+    const collapsed = rightPanel.classList.toggle('ah-right-collapsed');
+    rightPanelToggle.setAttribute('aria-expanded', String(!collapsed));
+    rightPanelToggle.setAttribute('title', collapsed ? 'Déplier le panneau latéral' : 'Replier le panneau latéral');
+    rightPanelToggle.querySelector('.ah-toggle-label').textContent = collapsed ? 'Ouvrir le panneau' : 'Replier le panneau';
+  });
+}
+</script>
+
 </body></html>
