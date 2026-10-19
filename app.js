@@ -85,7 +85,7 @@ signupForm.addEventListener("submit", async (event) => {
       password: form.get("password")
     }) });
     localStorage.setItem("afterhours_token", result.token);
-    displayUser(result.user);
+    window.location.href = "./site.html";
   } catch (error) {
     showMessage(error.message || "Impossible de créer le compte. Réessaie.", true);
   } finally {
@@ -142,3 +142,6 @@ accountDialog.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && accountDialog.open) accountDialog.close();
 });
+
+// Reopen the account popup when returning from the main site.
+if (window.location.hash === "#rejoindre") accountDialog.showModal();
