@@ -323,13 +323,15 @@ button:hover,.button:hover{filter:brightness(1.04)}
 .ah-toggle-arrow{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#f7e5ed;font-size:22px;line-height:1;transition:transform .24s ease}
 .ah-right-content{min-width:0;overflow:hidden;opacity:1;transition:opacity .16s ease}
 .ah-right-collapsed .ah-right-content{display:none}
-.ah-shell:has(.ah-right-collapsed){grid-template-columns:208px minmax(440px,1fr) 48px}
-.ah-right-collapsed .ah-right-toggle{height:100%;min-height:0;flex-direction:column;justify-content:flex-start;padding:14px 6px;gap:10px;border-bottom:0;border-left:1px solid #ead7e1;background:#fff}
-.ah-right-collapsed .ah-toggle-arrow{transform:rotate(180deg)}
-.ah-right-collapsed .ah-toggle-label{writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.04em}
-.ah-right-collapsed{border-left:0!important;box-shadow:none!important}
-.ah-right-collapsed .ah-right-toggle:hover{background:#fff1f6}
-.ah-right-toggle:focus-visible{outline:3px solid #c85d88;outline-offset:-3px}
+.ah-shell:has(.ah-right-collapsed){grid-template-columns:208px minmax(440px,1fr) 52px}
+.ah-right-collapsed{align-items:center;background:#fbfaf9!important;border-left:1px solid #e8dfe4!important;box-shadow:none!important}
+.ah-right-collapsed .ah-right-toggle{width:36px;height:36px;min-height:36px;flex:none;margin-top:12px;padding:0;border:1px solid #ead7e1;border-radius:11px;background:#fff;color:#765266;box-shadow:0 2px 8px rgba(65,39,52,.06)}
+.ah-right-collapsed .ah-toggle-arrow{width:28px;height:28px;border-radius:8px;background:transparent;font-size:25px;transform:none}
+.ah-right-collapsed .ah-toggle-label{display:none}
+.ah-right-collapsed .ah-right-toggle:hover{background:#f5edf1;border-color:#d9c3cf}
+.ah-right:not(.ah-right-collapsed) .ah-toggle-arrow{transform:rotate(180deg)}
+.ah-right:not(.ah-right-collapsed) .ah-toggle-label{display:inline}
+.ah-right-toggle:focus-visible{outline:3px solid #c85d88;outline-offset:2px}
 @media(max-width:1050px){.ah-shell:has(.ah-right-collapsed),.ah-shell{grid-template-columns:190px minmax(0,1fr)}.ah-right{display:none}}
 @media(max-width:600px){.ah-shell:has(.ah-right-collapsed),.ah-shell{display:block}.ah-right{display:none}}
 </style>
