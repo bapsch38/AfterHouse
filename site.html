@@ -97,6 +97,49 @@ body.site-page.feed-page{background:var(--paper);color:var(--ink)}
 .ah-right-icons{border-color:var(--line)}.ah-chat-user:hover{background:#e9e0f1}
 .ah-plus{background:#d7ff61;color:#261a30;border-radius:12px;box-shadow:0 8px 24px #35204722}
 .ah-empty{background:#fff;border-color:var(--line);border-radius:8px}.ah-empty .symbol{color:var(--accent)}
+
+/* AFTERHOURS — identité éditoriale : studio nocturne, navigation compacte et organique */
+.ah-shell{grid-template-columns:76px minmax(460px,1fr) 270px;background:#f7f4f8}
+.ah-left{align-items:center;padding:22px 8px;background:#f7f4f8;border-right:1px solid #e9e0ee;gap:20px}
+.ah-logo{width:50px;height:50px;margin:0 0 14px;border-radius:17px;background:#352047;color:#d7ff61;display:grid;place-items:center;font-size:18px;letter-spacing:-1px;box-shadow:0 7px 18px #35204720}
+.ah-logo:after{display:none}
+.ah-icons{align-items:center;gap:8px}
+.ah-icons a{width:54px;height:54px;min-height:54px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;padding:5px 0;border-radius:16px;color:#85758e;font-size:10px;font-weight:600}
+.ah-icons a .ah-nav-icon{width:auto;font-size:21px;color:inherit}
+.ah-icons a .ah-nav-label{font-size:9px;line-height:1.1;white-space:nowrap}
+.ah-icons a:hover{background:#eee7f4;color:#352047}
+.ah-icons a.active{background:#352047;color:#d7ff61;box-shadow:0 5px 15px #35204720}
+.ah-left-bottom{justify-items:center;border-top:1px solid #e9e0ee;padding-top:15px;color:#85758e;font-size:9px}
+.ah-avatar{width:38px;height:38px;border-radius:13px;background:#d7ff61;color:#352047;font-weight:900}
+.ah-main{padding:0 clamp(18px,4vw,56px) 50px;background:#f7f4f8}
+.ah-top{height:84px;max-width:1000px;margin:auto;gap:8px}
+.ah-top button{border-radius:999px;padding:12px 18px;font-size:13px}
+.ah-top button.active{background:#352047;color:#fff;border:0}
+.ah-top .ah-join{margin-left:auto;background:#d7ff61;color:#352047;border-radius:999px;font-weight:700}
+.ah-story-row{grid-template-columns:1.25fr 1fr 1fr;gap:12px;margin:20px auto 30px;max-width:850px}
+.ah-story{height:115px;padding:17px;border-radius:20px 20px 20px 5px;background:#352047!important;box-shadow:none}
+.ah-story:nth-child(2){background:#d7ff61!important;color:#352047}
+.ah-story:nth-child(3){background:#d9c8ed!important;color:#352047}
+.ah-story strong{font-size:14px}.ah-story small{display:block;margin-top:6px;opacity:.8}
+.ah-feed{max-width:850px}
+.ah-section-head h1{font-size:27px;letter-spacing:-.9px}
+.ah-pills button{border-radius:999px;padding:9px 17px}
+.ah-event{background:#eee7f4;border-radius:18px 18px 18px 5px;padding:13px}
+.ah-event-poster{background:#352047!important;border-radius:12px;color:#d7ff61}
+.ah-post{border-radius:20px 20px 20px 5px;box-shadow:0 8px 28px #35204708;border:1px solid #ece4f0}
+.ah-post-head{padding:18px 20px}
+.ah-person{border-radius:50%;background:#d9c8ed;color:#352047}
+.ah-follow{border-radius:999px;background:#eee7f4;color:#352047}
+.ah-post-media{height:215px;background:radial-gradient(circle at 70% 25%,#8d69b8,#352047 50%,#1b1323)!important}
+.ah-right{background:#fdfbfe;border-left:1px solid #e9e0ee}
+.ah-right-icons{border-bottom:1px solid #e9e0ee}
+.ah-right-icons a{padding:8px 4px;border-radius:12px}
+.ah-chat-title{padding:18px 12px;flex-wrap:wrap}
+.ah-chat-user{padding:13px 11px;border-radius:13px;margin:3px 7px;border-bottom:0}
+.ah-chat-face{border-radius:50%;background:#e9dff1;color:#352047}
+.ah-plus{right:285px;border-radius:50%;background:#d7ff61;color:#352047}
+@media(max-width:1050px){.ah-shell{grid-template-columns:76px minmax(0,1fr)}.ah-right{display:none}.ah-plus{right:22px}}
+@media(max-width:600px){.ah-left{height:65px;flex-direction:row;justify-content:space-between;padding:0 8px;background:#f7f4f8}.ah-logo{width:42px;height:42px;margin:0;border-radius:13px}.ah-icons{flex-direction:row;gap:2px}.ah-icons a{width:43px;height:45px;min-height:45px;border-radius:12px}.ah-icons a .ah-nav-label{display:none}.ah-icons a:nth-child(n+5){display:none}.ah-left-bottom{display:none}.ah-story-row{grid-template-columns:repeat(3,130px)}.ah-top{height:65px}.ah-main{padding:0 13px 45px}}
 </style>
 </head>
 <body class="site-page feed-page">
